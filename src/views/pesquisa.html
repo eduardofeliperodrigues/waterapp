@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterApp - Pesquisa de satisfação com a água</title>
+</head>
+
+<body>
+
+    <form action="" id="form-pesquisa" method="POST">
+
+        <fieldset>
+            <legend class="form-legend" for="zonaSorocaba">Em qual região você mora:</legend>
+            <select class="form-select-block" name="zonaSorocaba" id="zonaSorocaba">
+                <option value="" hidden="">Selecione uma opção</option>
+                <option value="norte">Zona Norte</option>
+                <option value="sul">Zona Sul</option>
+                <option value="centro">Centro</option>
+                <option value="leste">Zona Leste</option>
+                <option value="oeste">Zona Oeste</option>
+            </select>
+        </fieldset>
+        <!-- Pergunta 1 -->
+
+        <fieldset>
+            <legend class="form-legend">Você tem acesso a água?</legend>
+
+            <input class="form-check-input" type="radio" name="tipoDeAgua" id="tipoDeAgua" value="poço" checked>
+            <label class="form-label" for="tipoDeAgua">Poço</label>
+
+            <input class="form-check-input" type="radio" name="tipoDeAgua" id="tipoDeAgua" value="encanada">
+            <label class="form-label" for="tipoDeAgua">Água encanada</label>
+        </fieldset>
+        <!-- Pergunta 2 -->
+
+        <fieldset>
+            <legend class="form-legend">Qual a cor da sua água? Sendo 1 sem cor e 5 com alguma coloração.</legend>
+            <p class="form-label" id="rangeCor"></p>
+            <input class="form-range-input" type="range" max="5" min="1"
+                oninput="document.getElementById('rangeCor').innerHTML = this.value;" step="1" name="corAgua"
+                id="corAgua" value="3"></input>
+        </fieldset>
+        <!-- Pergunta 3 -->
+
+        <fieldset>
+            <legend class="form-legend">Sua água tem cheiro? Sendo 1 sem cheiro e 5 com cheiro.</legend>
+            <p class="form-label" id="rangeCheiro"></p>
+            <input class="form-range-input" type="range" max="5" min="1"
+                oninput="document.getElementById('rangeCheiro').innerHTML = this.value;" step="1" name="cheiroAgua"
+                id="cheiroAgua" value="3"></input>
+        </fieldset>
+        <!-- Pergunta 4 -->
+
+        <fieldset>
+            <legend class="form-legend"> Você tem acesso a água neste momento?</legend>
+
+            <input class="form-check-input" type="radio" name="aguaMomento" id="aguaMomento" value="sim"
+                checked>
+            <label class="form-label" for="q5">Sim</label>
+
+            <input class="form-check-input" type="radio" name="aguaMomento" id="aguaMomento" value="não">
+            <label class="form-label" for="q5">Não</label>
+
+        </fieldset>
+        <!-- Pergunta 5 -->
+
+
+        <button form="form-pesquisa">Enviar</button>
+
+    </form>
+
+
+    <!-- Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.0.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+</body>
+
+</html>
