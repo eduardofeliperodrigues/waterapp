@@ -1,12 +1,13 @@
 {
   "name": "projeto-waterapp",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "nunjucks": "^3.2.2",
-    "sqlite": "^4.0.15"
+    "sqlite": "^4.0.15",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
