@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Pesquisa waterApp</title>
+</head>
+<body>
+    {% for da in data %}
+    <table border="1">
+        <tr>
+            <td colspan="2">resumo dos dados Zona {{da.zonasorocaba}}</td>
+        </tr>
+        <tr>
+            <td>Agua encanada</td>
+            <td>%</td>
+        </tr>
+        <tr>
+            <td>Agua de poço</td>
+            <td>%</td>
+        </tr>
+        <tr>
+            <td>Cheiro da agua</td>
+            <td>Media</td>
+        </tr>
+        <tr>
+            <td>Cor da Agua</td>
+            <td>Media</td>
+        </tr>
+        <tr>
+            <td>Agua no momento</td>
+            <td>Mais sim ou não</td>
+        </tr>
+    </table>
+    <br>
+    {%endfor%}
+</body>
+</html>

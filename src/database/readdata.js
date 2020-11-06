@@ -1,10 +1,12 @@
 const db = require("./db");
 
-query = "SELECT COUNT(zonasorocaba) FROM results"
+module.exports.read = (callback) => {
+    query = "SELECT AVG(cordaagua) FROM results"
 
-db.all(query, [], (err, rows) => {
-    if (err) {
-        return console.error(err.message);
-    }
-    console.log(rows);
-});
+    db.all(query, (err, rows) => {
+        if (err) {
+            console.error(err.message)
+        }
+        callback(rows)
+    })
+}
