@@ -3,7 +3,7 @@ const express = require("express");
 const nunjucks = require("nunjucks");
 
 //Importação das paginas
-const { pesquisa } = require("./pages");
+const { research, saveResearch } = require("./pages");
 
 //Configuração express
 const app = express();
@@ -23,8 +23,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
 //Configuração de rotas
-app.get("/pesquisa", pesquisa);
-app.post("/pesquisa", pesquisa);
+app.get("/pesquisa", research);
+app.post("/savesearch", saveResearch);
 
 //Configuração de portas
 app.listen(port);

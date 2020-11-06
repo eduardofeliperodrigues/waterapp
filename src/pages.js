@@ -1,18 +1,15 @@
-const admin = require('firebase-admin');
-const serviceAccount = require("../projeto-waterapp-key.json");
+// Importando o DB.
+const database = require("./database/db");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+async function research(req, res) {
 
-let db = admin.firestore();
-
-function pesquisa(req, res) {
-
-    const data = req.body;
-    console.log(data)
-
-    return res.render("pesquisa.html");
+	return res.render("pesquisa.html");
 }
 
-module.exports = { pesquisa };
+async function saveResearch(req, res) {
+
+	const data = req.body;
+	console.log(data);
+}
+
+module.exports = { research, saveResearch };
