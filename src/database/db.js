@@ -1,4 +1,4 @@
-const database = require("sqlite-async");
+const database = require("sqlite");
 
 async function execute(db) {
     return db.exec(`
