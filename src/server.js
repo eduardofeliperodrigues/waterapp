@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended: true}));
 
 //Configuração de rotas
 app.get("/pesquisa", research);
-app.post("/savesearch", saveResearch);
+app.post("/pesquisa", saveResearch);
 
 //Configuração de portas
 app.listen(port);

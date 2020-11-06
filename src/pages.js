@@ -1,5 +1,6 @@
 // Importando o DB.
-const database = require("./database/db");
+const db = require("./database/db");
+const includeData = require("./database/includedata");
 
 async function research(req, res) {
 
@@ -9,7 +10,12 @@ async function research(req, res) {
 async function saveResearch(req, res) {
 
 	const data = req.body;
-	console.log(data);
+
+	includeData(db, data);
+	// console.log(data);
+
+	res.redirect("/pesquisa")
+
 }
 
 module.exports = { research, saveResearch };
