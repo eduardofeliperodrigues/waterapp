@@ -13,7 +13,7 @@ function saveResearch(req, res) {
 	const data = req.body;
 
 	includeData(db, data);
-	// console.log(data);
+	console.log(data);
 
 	res.redirect("/results")
 }

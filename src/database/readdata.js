@@ -1,9 +1,8 @@
 const db = require("./db");
 
 module.exports.read = (callback) => {
-    query = `SELECT zonasorocaba, AVG(cordaagua), AVG(cheirodaagua)  
-            FROM results 
-            GROUP BY zonasorocaba`
+    query = `SELECT zonasorocaba, tipodeagua, COUNT(tipodeagua), AVG(cheirodaagua), AVG(cordaagua), aguanomomento, COUNT(aguanomomento) 
+    FROM results GROUP BY zonasorocaba, tipodeagua, aguanomomento`
 
     db.all(query, (err, rows) => {
         if (err) {
