@@ -5,7 +5,7 @@ db.run(`
     CREATE TABLE IF NOT EXISTS results (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         zonasorocaba TEXT,
-        tipodeagua INTEGER,
+        tipodeagua TEXT,
         cheirodaagua INTEGER,
         cordaagua INTEGER,
         aguanomomento TEXT
