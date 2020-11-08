@@ -20,7 +20,8 @@ function saveResearch(req, res) {
 
 function results(req, res) {
 	data.read((data) => {
-		return res.render("results.html", { data })
+		console.log(data)
+		return res.render("resultstest.html", { data })
 	});
 };
 

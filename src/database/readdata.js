@@ -1,7 +1,7 @@
 const db = require("./db");
 
 module.exports.read = (callback) => {
-    query = `SELECT zonasorocaba, tipodeagua, COUNT(tipodeagua) as contaagua, AVG(cheirodaagua) as mediacheiro, AVG(cordaagua) as mediacor, aguanomomento, COUNT(aguanomomento) as countaguamomento
+    query = `SELECT zonasorocaba, tipodeagua, COUNT(tipodeagua) as contaagua, SUM(cheirodaagua) as mediacheiro, SUM(cordaagua) as mediacor, aguanomomento, COUNT(aguanomomento) as countaguamomento
     FROM results GROUP BY zonasorocaba, tipodeagua, aguanomomento`
 
     db.all(query, (err, rows) => {
@@ -15,47 +15,67 @@ module.exports.read = (callback) => {
                 name: "norte",
                 aguaencanada: 0,
                 aguapoco: 0,
-                mediacheiro: 0,
-                mediacor: 0,
-                aguanomomentosim: 0,
-                aguanomomentonao: 0
+                mediacheiroencanada: 0,
+                mediacheiropoco: 0,
+                mediacorencanada: 0,
+                mediacorpoco: 0,
+                aguanomomentosimencanada: 0,
+                aguanomomentonaoencanada: 0,
+                aguanomomentosimpoco: 0,
+                aguanomomentonaopoco: 0
             },
             {
                 name: "sul",
                 aguaencanada: 0,
                 aguapoco: 0,
-                mediacheiro: 0,
-                mediacor: 0,
-                aguanomomentosim: 0,
-                aguanomomentonao: 0
+                mediacheiroencanada: 0,
+                mediacheiropoco: 0,
+                mediacorencanada: 0,
+                mediacorpoco: 0,
+                aguanomomentosimencanada: 0,
+                aguanomomentonaoencanada: 0,
+                aguanomomentosimpoco: 0,
+                aguanomomentonaopoco: 0
             },
             {
                 name: "centro",
                 aguaencanada: 0,
                 aguapoco: 0,
-                mediacheiro: 0,
-                mediacor: 0,
-                aguanomomentosim: 0,
-                aguanomomentonao: 0
+                mediacheiroencanada: 0,
+                mediacheiropoco: 0,
+                mediacorencanada: 0,
+                mediacorpoco: 0,
+                aguanomomentosimencanada: 0,
+                aguanomomentonaoencanada: 0,
+                aguanomomentosimpoco: 0,
+                aguanomomentonaopoco: 0
 
             },
             {
                 name: "leste",
                 aguaencanada: 0,
                 aguapoco: 0,
-                mediacheiro: 0,
-                mediacor: 0,
-                aguanomomentosim: 0,
-                aguanomomentonao: 0
+                mediacheiroencanada: 0,
+                mediacheiropoco: 0,
+                mediacorencanada: 0,
+                mediacorpoco: 0,
+                aguanomomentosimencanada: 0,
+                aguanomomentonaoencanada: 0,
+                aguanomomentosimpoco: 0,
+                aguanomomentonaopoco: 0
             },
             {
                 name: "oeste",
                 aguaencanada: 0,
                 aguapoco: 0,
-                mediacheiro: 0,
-                mediacor: 0,
-                aguanomomentosim: 0,
-                aguanomomentonao: 0
+                mediacheiroencanada: 0,
+                mediacheiropoco: 0,
+                mediacorencanada: 0,
+                mediacorpoco: 0,
+                aguanomomentosimencanada: 0,
+                aguanomomentonaoencanada: 0,
+                aguanomomentosimpoco: 0,
+                aguanomomentonaopoco: 0
 
             }
         ]
@@ -65,36 +85,45 @@ module.exports.read = (callback) => {
             var index = zonas.findIndex(zona => zona.name == dataelement.zonasorocaba)
 
             if (dataelement.zonasorocaba == zonas[index].name) {
-                if (dataelement.tipoagua == "encanada") {
+                if (dataelement.tipodeagua == "encanada") {
     
                     zonas[index].aguaencanada += dataelement.contaagua
+                    zonas[index].mediacheiroencanada += dataelement.mediacheiro
+                    zonas[index].mediacorencanada += dataelement.mediacor
     
                     if (dataelement.aguanomomento == "sim") {
-                        zonas[index].aguanomomentosim += dataelement.countaguamomento
+                        zonas[index].aguanomomentosimencanada += dataelement.countaguamomento
                     } else {
-                        zonas[index].aguanomomentonao += dataelement.countaguamomento
+                        zonas[index].aguanomomentonaoencanada += dataelement.countaguamomento
                     }
-                } else {
+                } 
+                else if (dataelement.tipodeagua == "poço") {
     
                     zonas[index].aguapoco += dataelement.contaagua
+                    zonas[index].mediacheiropoco += dataelement.mediacheiro
+                    zonas[index].mediacorpoco += dataelement.mediacor
     
                     if (dataelement.aguanomomento == "sim") {
     
-                        zonas[index].aguanomomentosim += dataelement.countaguamomento
+                        zonas[index].aguanomomentosimpoco += dataelement.countaguamomento
                     } else {
     
-                        zonas[index].aguanomomentonao += dataelement.countaguamomento
+                        zonas[index].aguanomomentonaopoco += dataelement.countaguamomento
                     }
-                }
-    
-                zonas[index].mediacheiro += dataelement.mediacheiro
-                zonas[index].mediacor += dataelement.mediacor
-    
+                }    
             }
 
         })
 
-        callback(zonas)
+        for (index = 0; index < 5; index++){
+            zonas[index].mediacheiroencanada = Math.round(zonas[index].mediacheiroencanada / (zonas[index].aguanomomentosimencanada + zonas[index].aguanomomentonaoencanada))
+            zonas[index].mediacorencanada = Math.round(zonas[index].mediacorencanada / (zonas[index].aguanomomentosimencanada + zonas[index].aguanomomentonaoencanada))
 
+            zonas[index].mediacheiropoco = Math.round(zonas[index].mediacheiropoco / (zonas[index].aguanomomentosimpoco + zonas[index].aguanomomentonaopoco))
+            zonas[index].mediacorpoco = Math.round(zonas[index].mediacorpoco / (zonas[index].aguanomomentosimpoco + zonas[index].aguanomomentonaopoco))
+
+        }
+
+        callback(zonas)
     })
 }
