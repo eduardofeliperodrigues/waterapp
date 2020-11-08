@@ -6,30 +6,35 @@
     <title>Resultados - Pesquisa waterApp</title>
 </head>
 <body>
-    {% for da in data %}
+    {% for zonedata in data %}
     <table border="1">
         <tr>
-            <td colspan="2">resumo dos dados Zona {{da.zonasorocaba}}</td>
+            <td colspan="3">resumo dos dados da região {{zonedata.name}}</td>
         </tr>
         <tr>
-            <td>Agua encanada</td>
-            <td>%</td>
+            <td colspan="2">Agua encanada</td>
+            <td>{{zonedata.aguaencanada}}</td>
         </tr>
         <tr>
-            <td>Agua de poço</td>
-            <td>%</td>
+            <td colspan="2">Agua de poço</td>
+            <td>{{zonedata.aguapoco}}</td>
         </tr>
         <tr>
-            <td>Cheiro da agua</td>
-            <td>Media</td>
+            <td colspan="2">Cheiro da agua</td>
+            <td>{{zonedata.mediacheiro}}</td>
         </tr>
         <tr>
-            <td>Cor da Agua</td>
-            <td>Media</td>
+            <td colspan="2">Cor da Agua</td>
+            <td>{{zonedata.mediacor}}</td>
         </tr>
         <tr>
-            <td>Agua no momento</td>
-            <td>Mais sim ou não</td>
+            <td rowspan="2">Agua no momento</td>
+            <td>sim</td>
+            <td>{{zonedata.aguanomomentosim}}</td>
+        </tr>
+        <tr>
+            <td>não</td>
+            <td>{{zonedata.aguanomomentonao}}</td>
         </tr>
     </table>
     <br>
