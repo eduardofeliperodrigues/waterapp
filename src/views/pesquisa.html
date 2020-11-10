@@ -4,71 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/public/img/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/styles/page-research.css">
     <title>WaterApp - Pesquisa de satisfação com a água</title>
 </head>
 
-<body>
+<body id="page-body">
 
-    <form action="" id="form-pesquisa" method="POST">
+    <div class="page-content">
 
-        <fieldset>
-            <legend class="form-legend" for="zonaSorocaba">Em qual região você mora:</legend>
-            <select class="form-select-block" name="zonaSorocaba" id="zonaSorocaba">
-                <option value="" hidden="">Selecione uma opção</option>
-                <option value="norte">Zona Norte</option>
-                <option value="sul">Zona Sul</option>
-                <option value="centro">Centro</option>
-                <option value="leste">Zona Leste</option>
-                <option value="oeste">Zona Oeste</option>
-            </select>
-        </fieldset>
-        <!-- Pergunta 1 -->
+        <form action="" id="form-pesquisa" method="POST">
 
-        <fieldset>
-            <legend class="form-legend">Você tem acesso a água?</legend>
+            <fieldset>
+                <legend class="form-legend" for="zonaSorocaba">Em qual região você mora:</legend>
+                <select class="form-select-block" name="zonaSorocaba" id="zonaSorocaba">
+                    <option value="" hidden="">Selecione uma opção</option>
+                    <option value="norte">Zona Norte</option>
+                    <option value="sul">Zona Sul</option>
+                    <option value="centro">Centro</option>
+                    <option value="leste">Zona Leste</option>
+                    <option value="oeste">Zona Oeste</option>
+                </select>
+            </fieldset>
+            <!-- Pergunta 1 -->
 
-            <input class="form-check-input" type="radio" name="tipoDeAgua" id="tipoDeAgua" value="poço" checked>
-            <label class="form-label" for="tipoDeAgua">Poço</label>
+            <fieldset>
+                <legend class="form-legend">Você tem acesso a água?</legend>
+                <div class="input-content">
+                    <div class="um">
+                        <input class="form-check-input" type="radio" name="tipoDeAgua" id="tipoDeAgua" value="poço"
+                            checked>
+                        <label class="form-label" for="tipoDeAgua">Poço</label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="radio" name="tipoDeAgua" id="tipoDeAgua" value="encanada">
+                        <label class="form-label" for="tipoDeAgua">Encanada</label>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Pergunta 2 -->
 
-            <input class="form-check-input" type="radio" name="tipoDeAgua" id="tipoDeAgua" value="encanada">
-            <label class="form-label" for="tipoDeAgua">Água encanada</label>
-        </fieldset>
-        <!-- Pergunta 2 -->
+            <fieldset>
+                <legend class="form-legend">Qual a cor da sua água? Sendo 1 sem cor e 5 com alguma coloração.</legend>
+                <div class="range-content">
+                    <div>
+                        <p class="range-label" id="rangeCor">1</p>
 
-        <fieldset>
-            <legend class="form-legend">Qual a cor da sua água? Sendo 1 sem cor e 5 com alguma coloração.</legend>
-            <p class="form-label" id="rangeCor"></p>
-            <input class="form-range-input" type="range" max="5" min="1"
-                oninput="document.getElementById('rangeCor').innerHTML = this.value;" step="1" name="corAgua"
-                id="corAgua" value="3"></input>
-        </fieldset>
-        <!-- Pergunta 3 -->
+                    </div>
+                    <div>
+                        <input class="form-range-input" type="range" max="5" min="1"
+                            oninput="document.getElementById('rangeCor').innerHTML = this.value;" step="1"
+                            name="corAgua" id="corAgua" value="1"></input>
+                    </div>
+                </div>
 
-        <fieldset>
-            <legend class="form-legend">Sua água tem cheiro? Sendo 1 sem cheiro e 5 com cheiro.</legend>
-            <p class="form-label" id="rangeCheiro"></p>
-            <input class="form-range-input" type="range" max="5" min="1"
-                oninput="document.getElementById('rangeCheiro').innerHTML = this.value;" step="1" name="cheiroAgua"
-                id="cheiroAgua" value="3"></input>
-        </fieldset>
-        <!-- Pergunta 4 -->
+            </fieldset>
+            <!-- Pergunta 3 -->
 
-        <fieldset>
-            <legend class="form-legend"> Você tem acesso a água neste momento?</legend>
+            <fieldset>
+                <legend class="form-legend">Sua água tem cheiro? Sendo 1 sem cheiro e 5 com cheiro.</legend>
+                <div class="range-content">
+                    <div >
+                        <p class="range-label" id="rangeCheiro">1</p>
+                    </div>
+                    <div>
+                        <input class="form-range-input" type="range" max="5" min="1"
+                            oninput="document.getElementById('rangeCheiro').innerHTML = this.value;" step="1"
+                            name="cheiroAgua" id="cheiroAgua" value="1"></input>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Pergunta 4 -->
 
-            <input class="form-check-input" type="radio" name="aguaMomento" id="aguaMomento" value="sim" checked>
-            <label class="form-label" for="q5">Sim</label>
+            <fieldset>
+                <legend class="form-legend"> Você tem acesso a água neste momento?</legend>
+                <div class="input-content">
+                    <div class="um">
+                        <input class="form-check-input" type="radio" name="aguaMomento" id="aguaMomento" value="sim"
+                            checked>
+                        <label class="form-label" for="q5">Sim</label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="radio" name="aguaMomento" id="aguaMomento" value="não">
+                        <label class="form-label" for="q5">Não</label>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Pergunta 5 -->
 
-            <input class="form-check-input" type="radio" name="aguaMomento" id="aguaMomento" value="não">
-            <label class="form-label" for="q5">Não</label>
 
-        </fieldset>
-        <!-- Pergunta 5 -->
+            <button class="btn btn-primary btn-lg btn-block" form="form-pesquisa">Enviar</button>
 
+        </form>
 
-        <button form="form-pesquisa">Enviar</button>
-
-    </form>
+    </div>
 
 </body>
 

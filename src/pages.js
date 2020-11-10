@@ -21,7 +21,7 @@ function saveResearch(req, res) {
 function results(req, res) {
 	data.read((data) => {
 		console.log(data)
-		return res.render("resultstest.html", { data })
+		return res.render("results.html", { data })
 	});
 };
 
