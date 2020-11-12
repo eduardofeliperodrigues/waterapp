@@ -1,13 +1,13 @@
 #page-body {
     width: 100vw;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    font: 300 1.5rem "Roboto Condensed";
+    font: 300 1.2rem "Roboto Condensed";
 }
 
 #page-body .page-content {
-    width: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .page-content fieldset {
@@ -21,13 +21,13 @@
 
 .page-content .form-select-block {
     width: 100%;
-    font: 300 1.5rem "Roboto Condensed";
+    font: 300 1.2rem "Roboto Condensed";
     text-align: center; /* para firefox */
     text-align-last: center; /* para chrome */
 }
 
 .form-select-block option {
-    font: 300 1.5rem "Roboto Condensed";
+    font: 300 1.2rem "Roboto Condensed";
 }
 
 fieldset .input-content {
@@ -56,10 +56,17 @@ fieldset .range-content {
 
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
 form button {
-    width: 100%;
-    height: 2.2rem;
+    width: 90%;
+    height: 2.5rem;
     border: none;
     border-radius: .3rem;
     background: #00c0f3;
+    font: 300 1.2rem "Roboto Condensed";
+    color: white;
 }

@@ -9,18 +9,17 @@ const { research, saveResearch, results } = require("./pages");
 const app = express();
 const port = 3000;
 
+//Configurando arquivos estáticos css, imagens, scripts
+app.use(express.static("public"));
+
+//Receber os dados do req.body
+app.use(express.urlencoded({extended: true}));
 
 //Configuração nunjucks
 nunjucks.configure("src/views", {
     express: app,
     noCache: true,
 });
-
-//Configurando arquivos estáticos css, imagens, scripts
-app.use(express.static("public"));
-
-//Receber os dados do req.body
-app.use(express.urlencoded({extended: true}));
 
 //Configuração de rotas
 app.get("/pesquisa", research);

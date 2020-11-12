@@ -5,15 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/public/img/favicon.png" />
+
+    <link rel="stylesheet" href="/styles/page-research.css">
+    <link rel="stylesheet" href="/styles/partials/menu.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/styles/page-research.css">
+
+
     <title>WaterApp - Pesquisa de satisfação com a água</title>
 </head>
 
 <body id="page-body">
 
-    <div class="page-content">
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
 
+        <img class="active" src="/images/logo.jpg" alt="">
+
+        <a href="#home" class="active">
+        </a>
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+            <a href="#home">HOME</a>
+            <a href="#contact">LOGIN</a>
+            <a href="#about">RESULTADOS</a>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="page-content">
         <form action="" id="form-pesquisa" method="POST">
 
             <fieldset>
@@ -65,7 +89,7 @@
             <fieldset>
                 <legend class="form-legend">Sua água tem cheiro? Sendo 1 sem cheiro e 5 com cheiro.</legend>
                 <div class="range-content">
-                    <div >
+                    <div>
                         <p class="range-label" id="rangeCheiro">1</p>
                     </div>
                     <div>
@@ -93,12 +117,16 @@
             </fieldset>
             <!-- Pergunta 5 -->
 
-
-            <button class="btn btn-primary btn-lg btn-block" form="form-pesquisa">Enviar</button>
+            <div class="button-container">
+                <button class="btn btn-primary btn-lg btn-block" form="form-pesquisa">Enviar</button>
+            </div>
 
         </form>
 
     </div>
+
+
+    <script src="scripts/menu.js"></script>
 
 </body>
 

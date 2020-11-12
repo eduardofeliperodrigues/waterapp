@@ -1,0 +1,49 @@
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+    width: 100%;
+}
+
+.topnav img {
+    display: block;
+    margin: 0.3rem auto;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+    display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+    color: #00c0f3;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+    font-size: 1.5rem;
+    background: white;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+    background-color: white;
+    color: #00c0f3;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+    background-color: white;
+    color: #00c0f3;
+}
