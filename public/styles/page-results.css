@@ -1,0 +1,32 @@
+#page-body {
+    margin: 0;
+    border: none;
+    width: 100vw;
+    font: 300 1rem "Roboto Condensed";
+}
+
+.page-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+table {
+    margin-top: 20px;
+    width: 290px;
+    border-collapse: collapse;
+}
+
+h3 {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.regiao-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+hr {
+    width: 100%;
+}
