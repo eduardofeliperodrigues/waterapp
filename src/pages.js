@@ -11,6 +11,14 @@ function agua(req, res) {
 	return res.render("agua.html")
 }
 
+function esgoto(req, res) {
+	return res.render("esgoto.html");
+}
+
+function informativos(req, res) {
+	return res.render("informativos.html");
+}
+
 function research(req, res) {
 	return res.render("pesquisa.html");
 }
@@ -28,7 +36,9 @@ function saveResearch(req, res) {
 function results(req, res) {
 	data.read((data) => {
 		// console.log(data)
-		return res.render("results.html", { data })
+		return res.render("results.html", {
+			data
+		})
 	});
 };
 
@@ -36,6 +46,8 @@ function results(req, res) {
 module.exports = {
 	index,
 	agua,
+	esgoto,
+	informativos,
 	research,
 	saveResearch,
 	results
