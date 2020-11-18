@@ -1,0 +1,18 @@
+body {
+    font: 300 1.2rem "Roboto Condensed";
+}
+
+.card-container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.card {
+    margin: 50px auto;
+    width: 80%;
+    height: 100px;
+}
+
+.card img {
+    width: 260px;
+}

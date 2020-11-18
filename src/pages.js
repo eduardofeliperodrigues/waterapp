@@ -3,8 +3,15 @@ const db = require("./database/db");
 const data = require("./database/readdata");
 const includeData = require("./database/includedata");
 
-function research(req, res) {
+function index(req, res) {
+	return res.render("index.html");
+}
 
+function agua(req, res) {
+	return res.render("agua.html")
+}
+
+function research(req, res) {
 	return res.render("pesquisa.html");
 }
 
@@ -27,6 +34,8 @@ function results(req, res) {
 
 
 module.exports = {
+	index,
+	agua,
 	research,
 	saveResearch,
 	results
