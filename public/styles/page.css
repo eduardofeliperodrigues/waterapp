@@ -16,3 +16,24 @@ body {
 .card img {
     width: 260px;
 }
+
+.button-pesquisa{
+    display: flex;
+    justify-content: center;
+}
+
+.button-pesquisa a{
+    text-decoration: none;
+    color: white;
+}
+
+.button-pesquisa .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 295px;
+    border: none;
+    background-color: #00c0f3;
+    font: 300 1.2rem "Roboto Condensed";
+}
